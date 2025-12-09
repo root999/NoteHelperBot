@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteHelperBot", "NoteHelperBot\NoteHelperBot.csproj", "{8B659E32-F4FB-4D43-8D41-78DF3EC8C1F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteHelperBotTest", "NoteHelperBotTest\NoteHelperBotTest.csproj", "{F6CACE48-03AE-4114-B463-1556A96A703F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B659E32-F4FB-4D43-8D41-78DF3EC8C1F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B659E32-F4FB-4D43-8D41-78DF3EC8C1F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B659E32-F4FB-4D43-8D41-78DF3EC8C1F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B659E32-F4FB-4D43-8D41-78DF3EC8C1F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CACE48-03AE-4114-B463-1556A96A703F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CACE48-03AE-4114-B463-1556A96A703F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CACE48-03AE-4114-B463-1556A96A703F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CACE48-03AE-4114-B463-1556A96A703F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6CACE48-03AE-4114-B463-1556A96A703F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF641712-47BA-49C6-B75D-631ADFA9413F}
+	EndGlobalSection
+EndGlobal
