@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NoteHelperBot.AppService\NoteHelperBot.AppService.csproj" />
     <ProjectReference Include="..\NoteHelperBot\NoteHelperBot.csproj" />
   </ItemGroup>
 
