@@ -4,7 +4,7 @@ using Xunit;
 
 namespace NoteHelperBotTest.ControllerTests
 {
-    public class MessageControllerTests
+    public class MessageControllerE2ETests
     {
         [Fact]
         public async Task CanAcceptTextMessagesAndReturnsResponse()
