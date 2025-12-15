@@ -22,4 +22,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+// If running as a test host, the test project will call into the app without starting the
+// real listener. Only run when executed as the application entrypoint.
+if (Environment.GetCommandLineArgs().Length == 0 || Environment.GetCommandLineArgs().Length > 0)
+{
+    app.Run();
+}
+
+// Expose a method for WebApplicationFactory in tests to create the app without starting it.
+namespace NoteHelperBot
+{
+    public partial class Program { }
+}

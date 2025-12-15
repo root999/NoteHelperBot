@@ -1,6 +1,6 @@
-@NoteHelperBot_HostAddress = http://localhost:5168
+@NoteHelperBot_HostAddress = https://localhost:32769
 
 GET {{NoteHelperBot_HostAddress}}/weatherforecast/
-Accept: application/json
+Accept: application/json 
 
 ###
