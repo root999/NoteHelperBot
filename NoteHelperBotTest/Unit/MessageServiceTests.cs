@@ -1,27 +1,26 @@
-﻿using NoteHelperBotTest.ControllerTests;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NoteHelperBot.AppService.Impls;
+using NoteHelperBot.AppService.Interfaces;
+using NoteHelperBot.AppService.Models;
 
 namespace NoteHelperBotTest.Unit
 {
     public class MessageServiceTests
     {
         [Fact]
-        public async Task Should_Return_AI_Response_When_Message_Valid()
+        public async Task Should_Return_Response_When_Message_Valid()
         {
-           IMessageService messageService = new MessageService();
+            IMessageService messageService = new MessageService();
 
-            var messageRequest = new MessageRequest
+            var messageRequest = new ProcessMessageRequest
             {
-                Text = "Hello, this is a test message."
+                UserId = "test-user",
+                Message = "Hello, this is a test message.",
+                SessionId = "session-123",
+                Platform = "Web"
             };
             var result = await messageService.ProcessMessageAsync(messageRequest);
             Assert.NotNull(result);
-            Assert.False(string.IsNullOrEmpty(result.MessageId));
+            Assert.True(result.IsSuccess);
 
         }
     }
