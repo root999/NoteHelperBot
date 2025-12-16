@@ -5,9 +5,15 @@ namespace NoteHelperBot.AppService.Impls
 {
     public class MessageService : IMessageService
     {
-        public Task<ProcessMessageResponse> ProcessMessageAsync(ProcessMessageRequest message)
+        public async Task<ProcessMessageResponse> ProcessMessageAsync(ProcessMessageRequest message)
         {
-            throw new NotImplementedException();
+            return new ProcessMessageResponse
+            {
+                IsSuccess = true,
+                ResponseMessage = $"Received your message: {message.Message}",
+                Intent = "GeneralInquiry",
+                ProcessedAt = DateTime.UtcNow
+            };
         }
     }
 }
