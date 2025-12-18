@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NoteHelperBot.Infrastructure\NoteHelperBot.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
