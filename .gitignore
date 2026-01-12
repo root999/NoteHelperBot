@@ -3,6 +3,18 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Ignore secret config mounted at runtime
+NoteHelperBot/appsettings.secret.json
+
+# Ignore secret config files in any project
+**/appsettings.secret.json
+**/appsettings.*.secret.json
+
+# Common local secret files (do not commit)
+secrets.json
+.env
+.env.*
+
 # User-specific files
 *.rsuser
 *.suo

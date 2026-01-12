@@ -6,7 +6,7 @@ using NoteHelperBot.AppService.Models;
 using NoteHelperBot.Infrastructure.Models;
 using NoteHelperBot.Infrastructure.Repositories;
 
-namespace NoteHelperBotTest.Unit
+namespace NoteHelperBotTest.Unit.AppService
 {
     public class MessageServiceTests
     {
@@ -14,8 +14,8 @@ namespace NoteHelperBotTest.Unit
         public async Task Should_Return_Response_When_Message_Valid()
         {
 
-            var repoMock = new Moq.Mock<INoteRepository>();
-            var intentDetectorMock = new Moq.Mock<IIntentService>();
+            var repoMock = new Mock<INoteRepository>();
+            var intentDetectorMock = new Mock<IIntentService>();
             var loggerMock = new Mock<ILogger<MessageService>>();
 
             IMessageService messageService = new MessageService(repoMock.Object, intentDetectorMock.Object, loggerMock.Object);
@@ -37,12 +37,12 @@ namespace NoteHelperBotTest.Unit
         public async Task Should_Save_Message()
         {
 
-            var repoMock = new Moq.Mock<INoteRepository>();
-            var intentDetectorMock = new Moq.Mock<IIntentService>();
+            var repoMock = new Mock<INoteRepository>();
+            var intentDetectorMock = new Mock<IIntentService>();
             var loggerMock = new Mock<ILogger<MessageService>>();
 
 
-            intentDetectorMock.Setup(x => x.DetermineIntentAsync(Moq.It.IsAny<string>()))
+            intentDetectorMock.Setup(x => x.DetermineIntentAsync(It.IsAny<string>()))
                 .ReturnsAsync("Save");
 
             IMessageService messageService = new MessageService(repoMock.Object,intentDetectorMock.Object,loggerMock.Object);
@@ -57,7 +57,7 @@ namespace NoteHelperBotTest.Unit
             var result = await messageService.ProcessMessageAsync(messageRequest);
 
             Assert.True(result.IsSuccess);
-            repoMock.Verify(x => x.SaveMessageAsync(Moq.It.IsAny<MessageRecord>()), Moq.Times.Once);
+            repoMock.Verify(x => x.SaveMessageAsync(It.IsAny<MessageRecord>()), Times.Once);
 
         }
     }

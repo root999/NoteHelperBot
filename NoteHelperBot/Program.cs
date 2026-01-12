@@ -1,8 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using NoteHelperBot.AppService.Interfaces;
+using NoteHelperBot.AppService.Impls;
+using NoteHelperBot.Infrastructure;
+using NoteHelperBot.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Load optional secret configuration file if mounted at runtime (e.g. Docker volume)
+builder.Configuration.AddJsonFile("appsettings.secret.json", optional: true, reloadOnChange: true);
 
+// Add services to the container.
 builder.Services.AddControllers();
+
+// Infrastructure & application DI registrations
+// Register DbContext. For development and containerized runs we default to an in-memory DB
+// to avoid requiring external DB providers. Change to a real provider in production.
+builder.Services.AddDbContext<MessageRecordDbContext>(options => options.UseInMemoryDatabase("NoteHelperBot"));
+
+builder.Services.AddScoped<INoteRepository, NoteRepository>();
+builder.Services.AddScoped<IIntentService, IntentService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
