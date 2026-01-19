@@ -3,7 +3,7 @@ using NoteHelperBot.Infrastructure;
 using NoteHelperBot.Infrastructure.Models;
 using NoteHelperBot.Infrastructure.Repositories;
 
-namespace NoteHelperBotTest.Unit
+namespace NoteHelperBotTest.Unit.Infrastructure
 {
     public class NoteRepositoryTests
     {
